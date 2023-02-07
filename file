@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace тест_СШ
+{
+    internal class kuma
+    {
+        static void Main()
+        {
+
+            Person pipipip = new Person();
+            pipipip.print();
+            Console.WriteLine();
+            Date huhu = new Date();
+            huhu.print();
+        }
+    }
+    class Person
+    {
+      
+        public string Name;
+        public string Surname;
+        public string Patronymic;
+        public string Date;
+        public string Home;
+
+        public Person(string name, string surname, string patronymic, string date, string home)
+        {
+            Name = name;
+            Surname = surname;
+            Patronymic = patronymic;
+            Date = date;
+            Home = home;
+        }
+
+        public Person()
+        {
+            Name = "Артём";
+            Surname = "Акмалиев";
+            Patronymic = "Куангалиевич";
+            Date = "12.10.05";
+            Home = "Саратов";
+
+        }
+
+        public void print()
+        {
+            Console.WriteLine($"ИМЯ {Name}\nФАМИЛИЯ {Surname}\nОТЧЕСТВО {Patronymic}\nDATE {Date}\nГОРОД ПРОЖИВАНИЯ {Home}");
+        }
+    }
+
+    class Date
+    {
+        public int day;
+        public int month;
+        public int year;
+
+        public void print() { 
+        Random rand = new Random();
+
+            day = rand.Next(1, 31);
+            month = rand.Next(1, 12);
+            year = rand.Next(2000, 2023);
+            Console.WriteLine($"ДЕНЬ {day}\nМЕСЯЦ {month}\nГОД {year}");
+
+        }
+    }
+}
